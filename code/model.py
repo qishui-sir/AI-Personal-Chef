@@ -3,10 +3,12 @@ from config import Config
 
 config = Config()
 class LLMEntity:
-    def get_qwen(self):
+    @staticmethod
+    def get_qwen(): 
         return ChatQwen(
             model=config.qwen.model_name,
             api_key=config.qwen.api_key,
             base_url=config.qwen.base_url,
         )
+
 
